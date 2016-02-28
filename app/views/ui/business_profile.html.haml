@@ -1,0 +1,28 @@
+.panel.panel-primary
+  / Default panel contents
+  .panel-heading
+    %h4.panel-title Latest Reviews of Nintendo
+  .panel-body
+    / List group
+    .list-group
+      %a.list-group-item(href="/")
+        %h5.list-group-item-heading 1. Aaron
+        %p.list-group-item-text <em>Cras justo odio.</em> – 24 Jan 2016
+      %a.list-group-item(href="/")
+        %h5.list-group-item-heading 2. John
+        %p.list-group-item-text <em>Cras justo odio.</em> – 10 Jan 2016
+      %a.list-group-item(href="/")
+        %h5.list-group-item-heading 3. Morgan
+        %p.list-group-item-text <em>Cras justo odio.</em> – 7 Jan 2016
+      %a.list-group-item(href="/")
+        %h5.list-group-item-heading 4. Carly
+        %p.list-group-item-text <em>Cras justo odio.</em> – 1 jan 2016
+    / New review form
+    %form
+      .form-group
+        %label.col-sm-2.control-label(for="inputEmail3") Review Text
+        .col-sm-10
+        %textarea.form-control(placeholder="Type your review here." rows="4")
+      .form-group
+        .col-sm-10
+          %button.btn.btn-primary(type="submit") Submit Review
