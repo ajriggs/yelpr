@@ -1,0 +1,19 @@
+.panel.panel-primary
+  / Business name
+  .panel-heading
+    %h4.panel-title Latest Reviews of #{@business.name}
+  .panel-body
+    / Business reviews
+    .list-group
+      = render @business.reviews
+    / New review form
+    = form_for [@business, @review] do |f|
+      .form-group.row
+        %fieldset
+        .col-sm-6
+          = f.label :body, 'Review Text'
+          = f.text_area(:body, placeholder: "Type your review here.", rows: 4, class: 'form-control')
+      .form-group
+        %fieldset.actions
+        .col-sm-2
+          %button.btn.btn-primary(type="submit") Submit

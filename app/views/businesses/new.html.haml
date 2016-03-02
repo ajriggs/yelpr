@@ -1,0 +1,10 @@
+.panel.panel-primary
+  .panel-heading
+    %h4.panel-title Register your business on yelpr!
+  .panel-body
+    = bootstrap_form_for @business, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-6' do |f|
+      %fieldset
+        = f.text_field :name, label: 'Business Name'
+      %fieldset
+        .col-sm-offset-2.col-sm-10
+          %button.btn.btn-primary(type="submit") Sign Up

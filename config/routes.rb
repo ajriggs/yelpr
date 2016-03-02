@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
+  root to: 'businesses#index'
   get 'ui(/:action)', controller: 'ui'
+  get '/register', to: 'users#new', as: 'register'
+  get '/login', to: 'sessions#new', as: 'login'
+  get '/logout', to: 'sessions#destroy', as: 'logout'
+  get '/businesses/search', to: 'businesses#search', as: 'search_businesses'
+
+  resources :businesses, only: [:show, :new, :create] do
+    resources :reviews, only: [:create]
+  end
+  resources :users, only: [:create, :show]
+  resources :sessions, only: [:create]
+  resources :reviews, only: [:index]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

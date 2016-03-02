@@ -1,0 +1,4 @@
+/ user path coming soon!
+%a.list-group-item(href="#{user_path(review.user)}")
+  %h5.list-group-item-heading #{review.username}
+  %p.list-group-item-text <em>#{review.body}</em> – about #{review.business_name} on #{date_string(timestamp: review.created_at)}

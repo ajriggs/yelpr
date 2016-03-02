@@ -1,0 +1,4 @@
+%a.list-group-item(href="#{business_path(business)}")
+  %h5.list-group-item-heading #{business.name}
+  - if business.reviews.any?
+    %p.list-group-item-text <em>#{business.latest_review.body}</em> – by #{business.latest_review.username} on #{date_string(timestamp: business.latest_review.created_at)}

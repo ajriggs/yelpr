@@ -7,6 +7,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap_form'
+gem 'nested_form'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -27,9 +28,14 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'faker'
   gem 'fabrication'
-  gem 'capybara'
 
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+
 end

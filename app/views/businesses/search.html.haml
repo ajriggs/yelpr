@@ -1,0 +1,9 @@
+.panel.panel-primary
+  / Default panel contents
+  .panel-heading
+    %h4.panel-title Search Results
+  .panel-body
+    %p We found #{@search_results.count} businesses that match your search:
+  / List group
+  .list-group
+    = render @search_results

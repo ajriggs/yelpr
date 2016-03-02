@@ -1,0 +1,11 @@
+.panel.panel-primary
+  .panel-heading
+    %h4.panel-title Register with Yelpr!
+  .panel-body
+    =bootstrap_form_for @user, layout: :horizontal, label_col: 'col-sm-2', control_col: 'col-sm-6' do |f|
+      %fieldset
+        =f.text_field :username
+        =f.email_field :email
+        =f.password_field :password
+      %fieldset.actions.control-group.col-sm-offset-2
+        %button.btn.btn-primary(type="submit") Sign Up

@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module YelpClone
   class Application < Rails::Application
+    config.encoding = "utf-8"
+    config.filter_parameters += [:password]
+    config.active_support.escape_html_entities_in_json = true
+    config.autoload_paths += ["#{config.root}/lib"]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -24,6 +28,7 @@ module YelpClone
     config.active_record.raise_in_transactional_callbacks = true
 
     config.generators do |g|
+      g.orm :active_record
       g.template_engine :haml
     end
   end

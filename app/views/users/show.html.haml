@@ -1,0 +1,8 @@
+.panel.panel-primary
+  / Default panel contents
+  .panel-heading
+    %h4.panel-title #{@user.username}'s Latest Reviews
+  .panel-body
+    / List group
+    .list-group
+      = render @user.reviews
