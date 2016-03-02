@@ -22,12 +22,11 @@ describe '#latest_review' do
 end
 
 describe '#search_by_name' do
-  let(:apple_inc) { Fabricate :business, name: "Apple Inc." }
-  let(:apple_corps) { Fabricate :business, name: "Apple Corps" }
+  let!(:apple_inc) { Fabricate :business, name: "Apple Inc." }
+  let!(:apple_corps) { Fabricate :business, name: "Apple Corps" }
 
   it 'reuturns no result if there is no match with the query string' do
-    docker = Fabricate :business, name: "Docker"
-    expect(Business.search_by_name('Apple').count).to eq 0
+    expect(Business.search_by_name('Docker').count).to eq 0
   end
 
   it 'returns all results that contain the query string' do
