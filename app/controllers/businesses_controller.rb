@@ -18,7 +18,7 @@ class BusinessesController < ApplicationController
       flash[:notice] = 'You added a new business!'
       redirect_to root_path
     else
-      flash[:error] = 'Your submission contained validation errors. Please try again.'
+      flash.now[:error] = 'Your submission contained validation errors. Please try again.'
       render :new
     end
   end

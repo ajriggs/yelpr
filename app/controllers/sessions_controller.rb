@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "You've successfully logged in as #{user.username}."
       redirect_to root_path
     else
-      flash[:error] = 'Your login information was incorrect. Please verify your submission and try agian.'
+      flash.now[:error] = 'Your login information was incorrect. Please verify your submission and try agian.'
       render :new
     end
   end

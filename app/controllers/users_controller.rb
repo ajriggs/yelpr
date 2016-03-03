@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       flash[:notice] = "You're now registered for Yelpr! Sorry, we don't send confirmation emails yet <|-.-|>"
       redirect_to root_path
     else
-      flash[:error] = "Your submissions was invalid. Please fix the highlighted fields."
+      flash.now[:error] = "Your submissions was invalid. Please fix the highlighted fields."
       render :new
     end
   end

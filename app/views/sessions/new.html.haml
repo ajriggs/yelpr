@@ -1,6 +1,6 @@
 .panel.panel-primary
   .panel-heading
-    %h4.panel-title Please sign in
+    %h4.panel-title Log in to add reviews and see user profiles.
   .panel-body
     =form_tag sessions_path, class: 'form form-horizontal' do
       .form-group
@@ -13,4 +13,4 @@
           %input#inputPassword3.form-control(placeholder="Password" type="password" name="password")
       .form-group
         .col-sm-offset-2.col-sm-10
-          %button.btn.btn-primary(type="submit") Sign In
+          %button.btn.btn-primary(type="submit") Log In

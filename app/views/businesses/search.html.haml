@@ -3,7 +3,7 @@
   .panel-heading
     %h4.panel-title Search Results
   .panel-body
-    %p We found #{@search_results.count} businesses that match your search:
+    %p We found #{pluralize(@search_results.count, 'business')} related to your search:
   / List group
   .list-group
     = render @search_results

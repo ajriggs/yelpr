@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Your review was posted!"
       redirect_to business_path(@business)
     else
-      flash[:error] = "Oh no! There's something wrong with your review."
+      flash.now[:error] = "Oh no! There's something wrong with your review."
       render 'businesses/show'
     end
   end

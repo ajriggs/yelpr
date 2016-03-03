@@ -10,11 +10,17 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logout
-    redirect_to root_path, error: "You're already logged in!" unless !logged_in?
+    if logged_in?
+      flash[:error] = "You're already logged in!"
+      redirect_to root_path
+    end
   end
 
   def require_login
-    redirect_to login_path, error: "You're already logged in!" unless logged_in?
+    unless logged_in?
+      flash[:error] = "You must log in to do that."
+      redirect_to login_path
+    end
   end
 
   def current_user

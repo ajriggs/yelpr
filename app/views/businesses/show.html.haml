@@ -7,13 +7,14 @@
     .list-group
       = render @business.reviews
     / New review form
-    = form_for [@business, @review] do |f|
-      .form-group.row
-        %fieldset
-        .col-sm-6
-          = f.label :body, 'Review Text'
-          = f.text_area(:body, placeholder: "Type your review here.", rows: 4, class: 'form-control')
-      .form-group
-        %fieldset.actions
-        .col-sm-2
-          %button.btn.btn-primary(type="submit") Submit
+    - if logged_in?
+      = form_for [@business, @review] do |f|
+        .form-group.row
+          %fieldset
+          .col-sm-6
+            = f.label :body, "Share your experience with #{@business.name}"
+            = f.text_area(:body, placeholder: "Type your review here.", rows: 4, class: 'form-control')
+        .form-group
+          %fieldset.actions
+          .col-sm-2
+            %button.btn.btn-primary(type="submit") Submit
